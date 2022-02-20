@@ -18,8 +18,6 @@ public class TransferServiceErrorResponse {
 
 	/** The status. */
 	private String status;
-	/**
-	 * Request time Stamp
-	 */
+	/** Request time Stamp */
 	private Long timestamp;
 }

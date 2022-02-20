@@ -4,7 +4,7 @@ import com.bsf.bsfservice.api.boundry.dto.AccountDetailsDTO;
 import com.bsf.bsfservice.api.boundry.dto.AccountRequestDTO;
 import com.bsf.bsfservice.api.control.execption.TransferServiceError;
 import com.bsf.bsfservice.api.entity.Account;
-import com.bsf.bsfservice.api.entity.AccountStatus;
+import com.bsf.bsfservice.api.control.enums.AccountStatus;
 import com.bsf.bsfservice.api.entity.repository.AccountRepository;
 import org.springframework.stereotype.Service;
 

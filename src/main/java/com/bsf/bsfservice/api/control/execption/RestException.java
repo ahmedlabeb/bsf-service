@@ -17,7 +17,7 @@ public class RestException extends RuntimeException {
 	 * @param restError
 	 */
 	public RestException(final RestError restError) {
-		super(restError.desceription());
+		super(restError.description());
 		this.restError = restError;
 	}
 }

@@ -23,7 +23,7 @@ public class TransferServiceExceptionHandler extends ResponseEntityExceptionHand
 	@ExceptionHandler(TransferServiceException.class)
 	public final ResponseEntity<TransferServiceErrorResponse> handleException(final RestException exception) {
 		final RestError restError = exception.getRestError();
-		final TransferServiceErrorResponse errorResponse = TransferServiceErrorResponse.builder().errorMessage(restError.desceription()).error(restError.error())
+		final TransferServiceErrorResponse errorResponse = TransferServiceErrorResponse.builder().errorMessage(restError.description()).error(restError.error())
 				.status(restError.httpStatus().name()).build();
 		return new ResponseEntity<>(errorResponse, restError.httpStatus());
 	}

@@ -1,6 +1,6 @@
 package com.bsf.bsfservice.api.boundry.dto;
 
-import com.bsf.bsfservice.api.entity.TransactionStatus;
+import com.bsf.bsfservice.api.control.enums.TransactionStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

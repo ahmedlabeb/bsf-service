@@ -2,7 +2,7 @@ package com.bsf.bsfservice.api.control.execption;
 
 import org.springframework.http.HttpStatus;
 
-public enum TransferServiceError implements RestError{
+public enum TransferServiceError implements RestError {
 
 
 	INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "unexpected error"),
@@ -13,7 +13,7 @@ public enum TransferServiceError implements RestError{
 
 	REQUEST_VALIDATION_ERROR(HttpStatus.BAD_REQUEST, ""),
 
-	INSUFFIECIENT_BALANCE(HttpStatus.FORBIDDEN,"User don't have enough balance");
+	INSUFFICIENT_BALANCE(HttpStatus.FORBIDDEN,"User don't have enough balance");
 
 	TransferServiceError(HttpStatus httpStatus, String description) {
 		this.httpStatus = httpStatus;
@@ -41,7 +41,7 @@ public enum TransferServiceError implements RestError{
 	}
 
 	@Override
-	public String desceription() {
+	public String description() {
 		return this.description;
 	}
 

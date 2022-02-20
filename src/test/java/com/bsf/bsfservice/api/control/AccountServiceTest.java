@@ -4,20 +4,21 @@ import com.bsf.bsfservice.api.boundry.dto.AccountDetailsDTO;
 import com.bsf.bsfservice.api.boundry.dto.AccountRequestDTO;
 import com.bsf.bsfservice.api.control.execption.TransferServiceException;
 import com.bsf.bsfservice.api.entity.Account;
-import com.bsf.bsfservice.api.entity.AccountStatus;
+import com.bsf.bsfservice.api.control.enums.AccountStatus;
 import com.bsf.bsfservice.api.entity.repository.AccountRepository;
+import static org.junit.Assert.*;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import static org.mockito.Mockito.lenient;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
-
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.lenient;
 
 @ExtendWith(MockitoExtension.class)
 public class AccountServiceTest {

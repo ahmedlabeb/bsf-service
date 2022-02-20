@@ -3,6 +3,7 @@
 - Install JDK 11 or higher on your machine
 - Install Maven on your machine
 - Install any IDE Tool ( IntelliJ)
+- Install Docker
 # Steps to run the service 
 - apply command (maven clean install)
 - there is two way to start this service 

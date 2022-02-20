@@ -7,5 +7,5 @@ public interface RestError {
 
 	HttpStatus httpStatus();
 
-	String desceription();
+	String description();
 }
