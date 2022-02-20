@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/transfer")
+@RequestMapping("/api")
 @Slf4j
 @Api(value = "Transfer Enpoint")
 public class TransferController {
@@ -26,7 +26,7 @@ public class TransferController {
 		this.accountService = accountService;
 	}
 
-	@PostMapping("/process")
+	@PostMapping("/transfer")
 	@ApiOperation(value = "transfer money  ", response = ResponseEntity.class)
 	public ResponseEntity<?> transferMoney(@Validated @RequestBody TransferRequestDTO transferRequestDTO){
 		TransferResponseDTO transferResponseDTO = accountService.transferMoney(transferRequestDTO);

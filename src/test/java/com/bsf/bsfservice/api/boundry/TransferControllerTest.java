@@ -60,7 +60,7 @@ public class TransferControllerTest {
 	@Test
 	void testTransferMoney_successful() throws Exception {
 		lenient().when(transferService.transferMoney(buildTransferRequestDTO())).thenReturn(new TransferResponseDTO());
-		mockMvc.perform(post("/api/transfer/process")
+		mockMvc.perform(post("/api/transfer")
 						.content(mapper.writeValueAsString(buildTransferRequestDTO()))
 						.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().is2xxSuccessful());
@@ -70,7 +70,7 @@ public class TransferControllerTest {
 	@Test
 	void testTransferMoney_insufficient_balance() throws Exception {
 		lenient().when(transferService.transferMoney(buildTransferRequestDTO())).thenThrow(TransferServiceError.INSUFFIECIENT_BALANCE.buildExcpetion());
-		mockMvc.perform(post("/api/transfer/process")
+		mockMvc.perform(post("/api/transfer")
 						.content(mapper.writeValueAsString(buildTransferRequestDTO()))
 						.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isForbidden());
