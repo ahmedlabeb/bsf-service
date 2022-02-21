@@ -26,6 +26,15 @@ public class TransferService {
 		this.transactionRepository = transactionRepository;
 	}
 
+	/**
+	 * Process transfer transaction between two different account and
+	 * provide validation on the account ID and balances for each account
+	 * this method made to be transactional unit so if there is any problem happen while transfer execution
+	 * service will roll back to make sure that we have consistent data
+	 * also add Synchronization block over specific part of updating the data in DB to handle concurrent threads
+	 * @param transferRequestDTO
+	 * @return
+	 */
 	@Transactional
 	public TransferResponseDTO transferMoney(TransferRequestDTO transferRequestDTO) {
 
@@ -58,6 +67,13 @@ public class TransferService {
 		}
 	}
 
+	/**
+	 * Log transaction in the DB to track the history of transactions
+	 * @param fromAccountId
+	 * @param toAccountId
+	 * @param status
+	 * @return
+	 */
 	private synchronized Transaction logTransaction(Long fromAccountId, Long toAccountId, TransactionStatus status) {
 		Transaction transaction = Transaction.builder().fromAccountId(fromAccountId).toAccountId(toAccountId).action(TransactionAction.TRANSFER.name())
 				.status(status.name()).createdDate(Instant.now()).updatedDate(Instant.now()).build();

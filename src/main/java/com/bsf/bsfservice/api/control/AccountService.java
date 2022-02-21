@@ -19,7 +19,11 @@ public class AccountService {
 		this.accountRepository = accountRepository;
 	}
 
-
+	/**
+	 * Return account details based on the account ID
+	 * @param accountId
+	 * @return
+	 */
 	public AccountDetailsDTO getAccountDetails(Long accountId) {
 		Optional<Account> optionalAccount = accountRepository.findById(accountId);
 		if (optionalAccount.isEmpty()) {
@@ -30,6 +34,11 @@ public class AccountService {
 				.balance(account.getBalance()).status(account.getAccountStatus()).build();
 	}
 
+	/**
+	 * create new account with initial balance
+	 * @param accountRequestDTO
+	 * @return
+	 */
 	public AccountDetailsDTO createNewAccount(AccountRequestDTO accountRequestDTO) {
 		Account account = Account.builder().accountStatus(AccountStatus.ACTIVE.name()).email(accountRequestDTO.getEmail())
 				.balance(accountRequestDTO.getBalance()).build();

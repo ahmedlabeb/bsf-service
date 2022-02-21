@@ -24,7 +24,7 @@ public class AccountController {
 	}
 
 	@GetMapping("/account")
-	@ApiOperation(value = "get account details   ", response = ResponseEntity.class)
+	@ApiOperation(value = "get account details", response = ResponseEntity.class)
 	public ResponseEntity<?> accountDetails(@RequestParam(value = "accountId") Long accountId) {
 		AccountDetailsDTO accountDetails = accountService.getAccountDetails(accountId);
 		return ResponseUtil.wrapOrNotFound(accountDetails);
